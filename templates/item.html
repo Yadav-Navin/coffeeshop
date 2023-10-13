@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- Fix coffee images -->
+    <section class="coffee_type">
+        <h1>Cream Coffee</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, eum?</p>
+        <div class="row">
+            <div class="column">
+                <img src="static/img/1.webp" alt="heart_coffee">
+                <div class="layer">
+                    <h2>Heart_coffee</h2>
+                    <p>Price : 200Rs</p>
+                </div>
+                <div class="order">
+                    <a href="#">Order Now</a>
+                </div>
+            </div>
+            <div class="column">
+                <img src="static/img/2.jpg" alt="caramel-latte" >
+                <div class="layer">
+                    <h2>caramel-latte coffee</h2>
+                    <p>Price : 220Rs</p>
+                </div>
+                <div class="order">
+                    <a href="#">Order Now</a>
+                </div>
+            </div>
+            <div class="column">
+                <img src="static/img/3.webp" alt="Breve-Coffee" >
+                <div class="layer">
+                    <h2>Breve-Coffee</h2>
+                    <p>Price : 210Rs</p>
+                </div>
+                <div class="order">
+                    <a href="#">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic images -->
+    <section class="second_type">
+        <h1>Design of coffee</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, eum?</p>
+        <div class="row">
+            {% for item in dest %}
+            <div class="column">
+                <img src="{{item.img.url}}" alt="{{item.name}}">
+                <div class="layer">
+                    <h2>{{item.name}}</h2>
+                    <p>Price : {{item.price}}</p>
+                </div>
+                <div class="order">
+                    <a href="#">Order Now</a>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </section>
+{% include 'about.html' %}
+{% endblock %}

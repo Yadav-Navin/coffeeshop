@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Home section -->
+<div class="hero-btn">
+    <div class="button_click">
+        {% if user.is_authenticated %}
+        <h1>Welcome , {{user.username}}</h1>
+        {% endif %}
+        <a href="{% url 'item' %}">Visit Us To Know More</a>
+    </div>
+</div>
+{% endblock %}
